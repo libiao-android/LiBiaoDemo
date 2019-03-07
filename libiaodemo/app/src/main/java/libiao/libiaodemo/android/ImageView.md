@@ -1,0 +1,1 @@
+1、ImageView的默认scaleType=FIT_CENTER，一般用fitXY。

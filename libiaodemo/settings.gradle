@@ -1,1 +1,10 @@
-include ':app', ':matrix', ':java'
+include ':app',
+        ':matrix:demo',
+        ':matrix:matrix-android-lib',
+        ':matrix:matrix-android-commons',
+        ':matrix:matrix-io-canary',
+        ':matrix:matrix-apk-canary',
+        ':matrix:matrix-commons',
+        ':java',
+        ':okhttp',
+        ':jni'

@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.libiao.libiaodemo.matrix">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <application>
+        <activity android:name=".MatrixMainActivity"/>
+        <activity android:name=".iocanary.TestIOActivity"/>
+    </application>
+</manifest>

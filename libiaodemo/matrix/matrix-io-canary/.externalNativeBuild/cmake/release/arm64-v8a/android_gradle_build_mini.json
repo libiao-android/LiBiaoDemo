@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/Users/libiao657/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/release/arm64-v8a --target clean"
+  ],
+  "libraries": {
+    "io-canary-Release-arm64-v8a": {
+      "artifactName": "io-canary",
+      "buildCommand": "/Users/libiao657/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/release/arm64-v8a --target io-canary",
+      "abi": "arm64-v8a",
+      "output": "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/build/intermediates/cmake/release/obj/arm64-v8a/libio-canary.so"
+    }
+  }
+}

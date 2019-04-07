@@ -1,0 +1,183 @@
+package com.libiao.libiaodemo.matrix.iocanary;
+
+import android.Manifest;
+import android.app.Activity;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.view.View;
+import android.widget.Toast;
+
+import com.tencent.matrix.Matrix;
+
+import com.libiao.libiaodemo.matrix.R;
+import com.tencent.matrix.iocanary.IOCanaryPlugin;
+import com.tencent.matrix.plugin.Plugin;
+import com.tencent.matrix.util.MatrixLog;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+/**
+ * Description:
+ * Data：2019/4/5-下午10:46
+ * Author: libiao
+ */
+public class TestIOActivity extends Activity {
+
+    private static final int EXTERNAL_STORAGE_REQ_CODE = 0x1;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.matrix_io_test);
+        requestPer();
+    }
+
+    private void requestPer() {
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                Toast.makeText(this, "please give me the permission", Toast.LENGTH_SHORT).show();
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        EXTERNAL_STORAGE_REQ_CODE);
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case EXTERNAL_STORAGE_REQ_CODE:
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                }
+                break;
+        }
+    }
+
+    public void WriteTooMuch(View view) {
+        writeLongSth();
+    }
+
+
+    public void SmallBuffer(View view) {
+        readSth();
+    }
+
+    public void FileCloseLeak(View view) {
+        leakSth();
+    }
+
+    public void Start(View view) {
+        Plugin plugin = Matrix.with().getPluginByClass(IOCanaryPlugin.class);
+        if (!plugin.isPluginStarted()) {
+            MatrixLog.i("Matrix.", "plugin-io start");
+            plugin.start();
+        }
+    }
+
+    private void writeLongSth() {
+        try {
+            File f = new File("/sdcard/a_long.txt");
+            if (f.exists()) {
+                f.delete();
+            }
+            byte[] data = new byte[512];
+            for (int i = 0; i < data.length; i++) {
+                data[i] = 'a';
+            }
+            FileOutputStream fos = new FileOutputStream(f);
+            for (int i = 0; i < 10000 * 8; i++) {
+                fos.write(data);
+            }
+
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void readSth() {
+        try {
+            File f = new File("/sdcard/a_long.txt");
+            byte[] buf = new byte[400];
+            FileInputStream fis = new FileInputStream(f);
+            int count = 0;
+            while (fis.read(buf) != -1) {
+//                MatrixLog.i(TAG, "read %d", ++count);
+            }
+            fis.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void leakSth() {
+        writeSth();
+        try {
+            File f = new File("/sdcard/a.txt");
+            byte[] buf = new byte[400];
+            FileInputStream fis = new FileInputStream(f);
+            int count = 0;
+            while (fis.read(buf) != -1) {
+//                MatrixLog.i(TAG, "read %d", ++count);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //need to trigger gc to detect leak
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Runtime.getRuntime().gc();
+                Runtime.getRuntime().runFinalization();
+                Runtime.getRuntime().gc();
+            }
+        }).start();
+
+    }
+
+    private void writeSth() {
+        try {
+            File f = new File("/sdcard/a.txt");
+            if (f.exists()) {
+                f.delete();
+            }
+            byte[] data = new byte[4096];
+            for (int i = 0; i < data.length; i++) {
+                data[i] = 'a';
+            }
+            FileOutputStream fos = new FileOutputStream(f);
+            for (int i = 0; i < 10; i++) {
+                fos.write(data);
+            }
+
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,102 @@
+
+{
+	"buildFiles" : 
+	[
+		"/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/CMakeLists.txt"
+	],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"/Users/libiao657/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/debug/armeabi-v7a --target clean"
+	],
+	"cppFileExtensions" : [ "cc" ],
+	"libraries" : 
+	{
+		"io-canary-Debug-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "io-canary",
+			"buildCommand" : "/Users/libiao657/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/debug/armeabi-v7a --target io-canary",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot -Dio_canary_EXPORTS -I../../../../../matrix-android-commons/src/main/cpp/elf_hook -I../../../../../matrix-android-commons/src/main/cpp/md5 -I../../../../src/main/cpp  -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=19 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-android-commons/src/main/cpp/elf_hook/elf_hook.c",
+					"workingDirectory" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot  -Dio_canary_EXPORTS -I../../../../../matrix-android-commons/src/main/cpp/elf_hook -I../../../../../matrix-android-commons/src/main/cpp/md5 -I../../../../src/main/cpp -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=19 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -std=gnu++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/src/main/cpp/comm/io_canary_utils.cc",
+					"workingDirectory" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot  -Dio_canary_EXPORTS -I../../../../../matrix-android-commons/src/main/cpp/elf_hook -I../../../../../matrix-android-commons/src/main/cpp/md5 -I../../../../src/main/cpp -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=19 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -std=gnu++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/src/main/cpp/detector/main_thread_detector.cc",
+					"workingDirectory" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot  -Dio_canary_EXPORTS -I../../../../../matrix-android-commons/src/main/cpp/elf_hook -I../../../../../matrix-android-commons/src/main/cpp/md5 -I../../../../src/main/cpp -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=19 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -std=gnu++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/src/main/cpp/detector/detector.cc",
+					"workingDirectory" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot  -Dio_canary_EXPORTS -I../../../../../matrix-android-commons/src/main/cpp/elf_hook -I../../../../../matrix-android-commons/src/main/cpp/md5 -I../../../../src/main/cpp -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=19 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -std=gnu++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/src/main/cpp/detector/small_buffer_detector.cc",
+					"workingDirectory" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot  -Dio_canary_EXPORTS -I../../../../../matrix-android-commons/src/main/cpp/elf_hook -I../../../../../matrix-android-commons/src/main/cpp/md5 -I../../../../src/main/cpp -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=19 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -std=gnu++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/src/main/cpp/detector/repeat_read_detector.cc",
+					"workingDirectory" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot  -Dio_canary_EXPORTS -I../../../../../matrix-android-commons/src/main/cpp/elf_hook -I../../../../../matrix-android-commons/src/main/cpp/md5 -I../../../../src/main/cpp -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=19 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -std=gnu++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/src/main/cpp/core/io_canary.cc",
+					"workingDirectory" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot  -Dio_canary_EXPORTS -I../../../../../matrix-android-commons/src/main/cpp/elf_hook -I../../../../../matrix-android-commons/src/main/cpp/md5 -I../../../../src/main/cpp -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=19 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -std=gnu++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/src/main/cpp/core/io_canary_env.cc",
+					"workingDirectory" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot  -Dio_canary_EXPORTS -I../../../../../matrix-android-commons/src/main/cpp/elf_hook -I../../../../../matrix-android-commons/src/main/cpp/md5 -I../../../../src/main/cpp -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=19 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -std=gnu++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/src/main/cpp/core/io_info_collector.cc",
+					"workingDirectory" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot -Dio_canary_EXPORTS -I../../../../../matrix-android-commons/src/main/cpp/elf_hook -I../../../../../matrix-android-commons/src/main/cpp/md5 -I../../../../src/main/cpp  -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=19 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-android-commons/src/main/cpp/md5/md5.c",
+					"workingDirectory" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot  -Dio_canary_EXPORTS -I../../../../../matrix-android-commons/src/main/cpp/elf_hook -I../../../../../matrix-android-commons/src/main/cpp/md5 -I../../../../src/main/cpp -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/libiao657/Library/Android/sdk/android-ndk-r16b/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=19 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -std=gnu++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/src/main/cpp/io_canary_jni.cc",
+					"workingDirectory" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				}
+			],
+			"output" : "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/build/intermediates/cmake/debug/obj/armeabi-v7a/libio-canary.so",
+			"toolchain" : "15030295415334440789"
+		}
+	},
+	"toolchains" : 
+	{
+		"15030295415334440789" : 
+		{
+			"cCompilerExecutable" : "/Users/libiao657/Library/Android/sdk/android-ndk-r16b/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/libiao657/Library/Android/sdk/android-ndk-r16b/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+		}
+	}
+}

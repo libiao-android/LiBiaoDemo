@@ -7,4 +7,5 @@ include ':app',
         ':matrix:matrix-commons',
         ':java',
         ':okhttp',
-        ':jni'
+        ':jni',
+        ':func:lottie'

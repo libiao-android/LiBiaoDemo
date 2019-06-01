@@ -16,8 +16,10 @@
 
 package com.tencent.matrix.apk;
 
+import com.google.gson.JsonObject;
 import com.tencent.matrix.apk.model.job.ApkJob;
 import com.tencent.matrix.apk.model.job.JobConstants;
+import com.tencent.matrix.apk.model.output.IUploadCallback;
 
 import java.io.File;
 import java.net.URL;
@@ -27,6 +29,9 @@ import java.net.URL;
  */
 
 public final class ApkChecker {
+
+    private String mConfigFilePath;
+    private IUploadCallback mUploadCallback;
 
     private static final String INTRODUCT =
         "Welcome to use ApkChecker!\n"
@@ -89,7 +94,7 @@ public final class ApkChecker {
     }
 
     private void run(String[] args) {
-      ApkJob job = new ApkJob(args);
+      ApkJob job = new ApkJob(args, mUploadCallback);
       try {
           job.run();
       } catch (Exception e) {
@@ -106,6 +111,22 @@ public final class ApkChecker {
     public static void printHelp() {
         System.out.println(HELP);
         System.exit(-1);
+    }
+
+    public void setConfigFilePath (String path) {
+        mConfigFilePath = path;
+    }
+
+    public void setUploadCallback(IUploadCallback callback){
+        mUploadCallback = callback;
+    }
+
+    public void start() {
+        if(mConfigFilePath == null) throw new IllegalArgumentException("configFilePath can not be null");
+        File configFile = new File(mConfigFilePath);
+        if(!configFile.exists() || !configFile.canRead()) throw new IllegalArgumentException("configFilePath is not exist or can not read");
+        String args[] = new String[]{"--config", mConfigFilePath};
+        run(args);
     }
 
 }

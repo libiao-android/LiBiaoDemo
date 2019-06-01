@@ -24,4 +24,16 @@
         android:layout_height="60dp"
         android:text="matrix"
         android:onClick="matrix"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="lottie"
+        android:onClick="lottie"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="ui"
+        android:onClick="ui"/>
 </LinearLayout>

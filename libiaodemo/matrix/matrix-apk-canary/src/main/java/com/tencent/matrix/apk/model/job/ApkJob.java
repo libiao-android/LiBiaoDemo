@@ -21,7 +21,10 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.tencent.matrix.apk.ApkChecker;
+import com.tencent.matrix.apk.model.output.IUploadCallback;
 import com.tencent.matrix.apk.model.output.MMTaskResultRegistry;
+import com.tencent.matrix.apk.model.output.PATaskJsonResult;
+import com.tencent.matrix.apk.model.output.PATaskResultRegistry;
 import com.tencent.matrix.apk.model.result.JobResult;
 import com.tencent.matrix.apk.model.result.JobResultFactory;
 import com.tencent.matrix.apk.model.result.TaskResult;
@@ -64,6 +67,7 @@ public final class ApkJob {
 
     private String[] args;
     private JobConfig jobConfig;
+    private IUploadCallback mUploadCallback;
 
     private ExecutorService executor;
     private static final int TIMEOUT_SECONDS = 600;
@@ -75,11 +79,12 @@ public final class ApkJob {
     private List<ApkTask> taskList;
     private List<JobResult> jobResults;
 
-    public ApkJob(String[] args) {
-        this(args, 0, 0);
+    public ApkJob(String[] args, IUploadCallback callback) {
+        this(args, 0, 0, callback);
     }
 
-    public ApkJob(String[] args, int timeoutSeconds, int threadNum) {
+    public ApkJob(String[] args, int timeoutSeconds, int threadNum, IUploadCallback callback) {
+        mUploadCallback = callback;
         this.args = args;
         jobConfig = new JobConfig();
         if (timeoutSeconds > 0) {
@@ -209,6 +214,15 @@ public final class ApkJob {
             }
             jobConfig.setUnzipPath(value);
 
+            if(config.has("--min") && !Util.isNullOrNil(config.get("--min").getAsString())) {
+                value = config.get("--min").getAsString();
+                try {
+                    jobConfig.minFileSize = Long.parseLong(value);
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                }
+            }
+
             if (config.has(JobConstants.PARAM_FORMAT) && !Util.isNullOrNil(config.get(JobConstants.PARAM_FORMAT).getAsString())) {
                 value = config.get(JobConstants.PARAM_FORMAT).getAsString();
             } else {
@@ -227,7 +241,8 @@ public final class ApkJob {
             if (config.has(JobConstants.PARAM_OUTPUT) && !Util.isNullOrNil(config.get(JobConstants.PARAM_OUTPUT).getAsString())) {
                 value = config.get(JobConstants.PARAM_OUTPUT).getAsString();
             } else {
-                value = apkFile.getParentFile().getAbsolutePath() + File.separator + getApkRawName(apkFile.getName());
+                //value = apkFile.getParentFile().getAbsolutePath() + File.separator + getApkRawName(apkFile.getName());
+                value = "";
             }
             jobConfig.setOutputPath(value);
 
@@ -395,7 +410,7 @@ public final class ApkJob {
                 if (globalParams.containsKey(JobConstants.PARAM_OUTPUT)) {
                     jobConfig.setOutputPath(globalParams.get(JobConstants.PARAM_OUTPUT));
                 } else {
-                    jobConfig.setOutputPath(apkFile.getParentFile().getAbsolutePath() + File.separator + getApkRawName(apkFile.getName()));
+                    //jobConfig.setOutputPath(apkFile.getParentFile().getAbsolutePath() + File.separator + getApkRawName(apkFile.getName()));
                 }
 
                 if (globalParams.containsKey(JobConstants.PARAM_FORMAT_JAR)) {
@@ -424,6 +439,9 @@ public final class ApkJob {
             MMTaskResultRegistry mmTaskResultRegistry = new MMTaskResultRegistry();
             TaskResultFactory.addCustomTaskHtmlResult(mmTaskResultRegistry.getHtmlResult());
             TaskResultFactory.addCustomTaskJsonResult(mmTaskResultRegistry.getJsonResult());
+
+            PATaskResultRegistry paTaskResultRegistry = new PATaskResultRegistry();
+            TaskResultFactory.addCustomTaskJsonResult(paTaskResultRegistry.getJsonResult());
         } catch (Exception e) {
             ApkChecker.printError(e.getMessage());
         }
@@ -511,8 +529,13 @@ public final class ApkJob {
             }
             executor.shutdown();
 
-            for (JobResult jobResult : jobResults) {
-                jobResult.output();
+            if(!Util.isNullOrNil(jobConfig.getOutputPath())) {
+                for (JobResult jobResult : jobResults) {
+                    jobResult.output();
+                }
+            }
+            if(mUploadCallback != null) {
+                mUploadCallback.onPrepareUploadDataDone(PATaskJsonResult.data);
             }
             Log.d(TAG, "parse apk end, try to delete tmp un zip files");
             FileUtils.deleteDirectory(new File(jobConfig.getUnzipPath()));

@@ -327,6 +327,7 @@ public class UnzipTask extends ApkTask {
             config.setEntrySizeMap(entrySizeMap);
             config.setEntryNameMap(entryNameMap);
             ((TaskJsonResult) taskResult).add("entries", jsonArray);
+            ((TaskJsonResult) taskResult).add("min", config.minFileSize);
             taskResult.setStartTime(startTime);
             taskResult.setEndTime(System.currentTimeMillis());
             return taskResult;

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <VideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/iv_video_close"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="36dp"
+        android:src="@mipmap/video_close"/>
+
+    <FrameLayout
+        android:id="@+id/view_video_pause"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:layout_gravity="center"
+        android:background="@drawable/video_pause_center_bg"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:src="@mipmap/video_pause_center"/>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/seekbar_bg">
+        <ImageView
+            android:id="@+id/iv_video_play"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@mipmap/video_pause"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/tv_video_time_ing"
+            android:layout_toRightOf="@+id/iv_video_play"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:textColor="#D9FFFFFF"
+            android:layout_marginLeft="11.5dp"
+            android:text="00:00"/>
+        <TextView
+            android:id="@+id/tv_video_time_total"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:textColor="#D9FFFFFF"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:text="00:10"/>
+        <SeekBar
+            android:id="@+id/seekbar_video"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_video_time_ing"
+            android:layout_toLeftOf="@+id/tv_video_time_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:progressDrawable="@drawable/seekbar_progress_drawable"
+            android:thumb="@drawable/seekbar_thumb"
+            android:thumbOffset="0dp"
+            />
+
+
+
+    </RelativeLayout>
+</FrameLayout>

@@ -36,6 +36,7 @@ public final class JobConfig {
     private String mappingFilePath;
     private String resMappingFilePath;
     private JsonArray outputConfig;
+    public long minFileSize;
 
     private List<String> outputFormatList;
     private Map<String, String> proguardClassMap;

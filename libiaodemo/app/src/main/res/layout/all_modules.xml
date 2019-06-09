@@ -36,4 +36,9 @@
         android:layout_height="60dp"
         android:text="ui"
         android:onClick="ui"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="exoplayer"
+        android:onClick="exoplayer"/>
 </LinearLayout>

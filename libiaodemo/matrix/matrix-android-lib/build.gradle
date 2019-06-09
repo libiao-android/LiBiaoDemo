@@ -24,7 +24,7 @@ dependencies {
 
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
 
-    api 'com.android.support:support-annotations:27.0.2'
+    api 'com.android.support:support-annotations:24.0.0'
 }
 
 //version = rootProject.ext.VERSION_NAME

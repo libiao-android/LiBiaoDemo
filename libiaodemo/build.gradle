@@ -27,8 +27,8 @@ task clean(type: Delete) {
 ext {
     // For android sub-projects
     minSdkVersion = 19
-    targetSdkVersion = 24
-    compileSdkVersion = 24
+    targetSdkVersion = 26
+    compileSdkVersion = 26
     buildToolsVersion = '23.0.3'
     VERSION_NAME = "0.4.10"
 }

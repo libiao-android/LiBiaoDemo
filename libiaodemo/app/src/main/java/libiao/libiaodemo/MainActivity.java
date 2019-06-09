@@ -1,13 +1,13 @@
 package libiao.libiaodemo;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import com.airbnb.lottie.test.LottieTestActivity;
+import com.libiao.libiaodemo.exoplayer.activity.TestExoplayerActivity;
 import com.libiao.libiaodemo.jni.TestJniActivity;
 import com.libiao.libiaodemo.matrix.MatrixMainActivity;
 import com.libiao.libiaodemo.okhttp.activity.TestOkhttpActivity;
@@ -16,11 +16,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import libiao.libiaodemo.android.ui.video.VideoActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void ui(View view) {
         Intent in = new Intent(this, VideoActivity.class);
+        startActivity(in);
+    }
+
+    public void exoplayer(View view) {
+        Intent in = new Intent(this, TestExoplayerActivity.class);
         startActivity(in);
     }
 }

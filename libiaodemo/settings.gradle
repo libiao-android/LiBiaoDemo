@@ -8,4 +8,5 @@ include ':app',
         ':java',
         ':okhttp',
         ':jni',
-        ':func:lottie'
+        ':func:lottie',
+        ':func:exoplayer'

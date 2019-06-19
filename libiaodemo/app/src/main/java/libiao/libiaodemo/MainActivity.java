@@ -9,6 +9,7 @@ import android.view.View;
 import com.airbnb.lottie.test.LottieTestActivity;
 import com.libiao.libiaodemo.exoplayer.activity.TestExoplayerActivity;
 import com.libiao.libiaodemo.jni.TestJniActivity;
+import com.libiao.libiaodemo.kotlin.FirstKotlinActivity;
 import com.libiao.libiaodemo.matrix.MatrixMainActivity;
 import com.libiao.libiaodemo.okhttp.activity.TestOkhttpActivity;
 
@@ -81,6 +82,11 @@ public class MainActivity extends Activity {
 
     public void exoplayer(View view) {
         Intent in = new Intent(this, TestExoplayerActivity.class);
+        startActivity(in);
+    }
+
+    public void kotlin(View view) {
+        Intent in = new Intent(this, FirstKotlinActivity.class);
         startActivity(in);
     }
 }

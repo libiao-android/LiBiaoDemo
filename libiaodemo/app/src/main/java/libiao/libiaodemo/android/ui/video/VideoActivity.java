@@ -33,11 +33,15 @@ public class VideoActivity extends Activity implements View.OnClickListener {
 
     private Handler mHandler = new Handler();
 
-    private int mTotalTime = 60;
+    private int mTotalTime = 0; //单位秒
     private int mPlayTime = 0;
     private boolean mBuffering = false;
     private boolean mOnPaused = false;
     private int mCurrentPosition = 0;
+
+    private String path1 = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
+    private String path2 = "https://www.apple.com/105/media/cn/home/2018/da585964_d062_4b1d_97d1_af34b440fe37/films/behind-the-mac/mac-behind-the-mac-tpl-cn_848x480.mp4";
+    private String path3 = "http://www.w3school.com.cn/example/html5/mov_bbb.mp4";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -111,13 +115,14 @@ public class VideoActivity extends Activity implements View.OnClickListener {
             }
         });
         mVideoView = (VideoView) findViewById(R.id.video_view);
-        mVideoView.setVideoPath("https://www.apple.com/105/media/cn/home/2018/da585964_d062_4b1d_97d1_af34b440fe37/films/behind-the-mac/mac-behind-the-mac-tpl-cn_848x480.mp4");
+        mVideoView.setVideoPath(path1);
         mVideoView.requestFocus();
         mVideoView.start();
         mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                Log.i("libiao", "onPrepared = ");
+                Log.i("libiao", "onPrepared = " + mVideoView.getDuration());
+                mTotalTime = mVideoView.getDuration() / 1000;
                 begin();
             }
         });
@@ -179,6 +184,7 @@ public class VideoActivity extends Activity implements View.OnClickListener {
     }
 
     private void begin() {
+        mPlayTotalTimeTv.setText(formatTime(mTotalTime));
         mPlayIv.setImageResource(R.mipmap.video_pause);
         mPauseVideoCenterView.setVisibility(View.GONE);
         mHandler.post(mUpdateProgress);

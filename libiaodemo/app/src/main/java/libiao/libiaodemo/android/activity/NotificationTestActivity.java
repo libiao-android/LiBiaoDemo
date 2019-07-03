@@ -63,7 +63,7 @@ public class NotificationTestActivity extends Activity {
     }
 
 
-    public final static String notifyGroupId  = "jinguanjia1";
+    public final static String notifyGroupId  = "libiaodemo";
     public final static String notifyGroupName  = "类别";
     public NotificationCompat.Builder getNotificationGroup(Context context, NotificationManager notificationManager, String channelId, String channelName){
 

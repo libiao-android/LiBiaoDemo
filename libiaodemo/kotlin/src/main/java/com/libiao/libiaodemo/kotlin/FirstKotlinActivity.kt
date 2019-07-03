@@ -14,6 +14,6 @@ class FirstKotlinActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.first_kotlin_main)
-        tv.text = "hello kotlin";
+        tv.text = "hello kotlin"
     }
 }

@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.all_modules);
+        setContentView(R.layout.activity_main);
         float a = getResources().getDimension(R.dimen.activity_horizontal_margin);
         Log.i("libiao", "a = " + a);
         String s = "4" + "/" + "15";
@@ -39,7 +39,8 @@ public class MainActivity extends Activity {
         JSONObject one = new JSONObject();
         try {
             String string = "{\"ulinkRefer\":\"4060415\",\"wxAPPId\":\"wxe1eed2808f25aa15\",\"Drainage\":null,\"ActivityID\":\"20190320703800\",\"medium\":\"WX\"}";
-            JSONObject object = new JSONObject(string);
+            String s2 = "";
+            JSONObject object = new JSONObject(s2);
             Log.i("libiao", "object = " + object);
             String str = object.get("Drainage").toString();
             Log.i("libiao", "str = " + str);

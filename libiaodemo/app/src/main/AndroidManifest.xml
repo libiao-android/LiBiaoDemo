@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".android.ui.video.VideoActivity"/>
+        <activity android:name=".android.activity.DeviceInfoActivity"/>
     </application>
 
 </manifest>

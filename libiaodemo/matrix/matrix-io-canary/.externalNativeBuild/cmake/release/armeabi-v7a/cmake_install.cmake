@@ -1,4 +1,4 @@
-# Install script for directory: /Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary
+# Install script for directory: /Users/libiao657/Documents/work/demo/libiaodemo/libiaodemo/matrix/matrix-io-canary
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/libiao657/Documents/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/release/armeabi-v7a/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/libiao657/Documents/work/demo/libiaodemo/libiaodemo/matrix/matrix-io-canary/.externalNativeBuild/cmake/release/armeabi-v7a/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

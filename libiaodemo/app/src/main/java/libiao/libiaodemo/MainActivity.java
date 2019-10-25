@@ -18,6 +18,7 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 
+import libiao.libiaodemo.android.activity.DeviceInfoActivity;
 import libiao.libiaodemo.android.ui.video.VideoActivity;
 
 public class MainActivity extends Activity {
@@ -25,7 +26,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.all_modules);
         float a = getResources().getDimension(R.dimen.activity_horizontal_margin);
         Log.i("libiao", "a = " + a);
         String s = "4" + "/" + "15";
@@ -88,6 +89,11 @@ public class MainActivity extends Activity {
 
     public void kotlin(View view) {
         Intent in = new Intent(this, FirstKotlinActivity.class);
+        startActivity(in);
+    }
+
+    public void deviceInfo(View view) {
+        Intent in = new Intent(this, DeviceInfoActivity.class);
         startActivity(in);
     }
 }

@@ -18,6 +18,9 @@
         </activity>
         <activity android:name=".android.ui.video.VideoActivity"/>
         <activity android:name=".android.activity.DeviceInfoActivity"/>
+        <activity android:name=".android.ui.listview.ListViewActivity"/>
+        <activity android:name=".android.ui.recyclerview.RecyclerViewActivity"/>
+        <activity android:name=".android.ui.UIActivity"/>
     </application>
 
 </manifest>

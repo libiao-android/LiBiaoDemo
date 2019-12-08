@@ -16,11 +16,11 @@ import javax.imageio.ImageIO;
 public class RegexTest {
 
     public static void main(String[] args) {
-       String value = "【开门迎财送红包喽！最低66元最高200元惊喜大红包等你来领！】 https:/actevo/201909-invite-packet/index.html?aid=20190926190926#/empty?urlToken=210268fec54c3f25a34c45af9172ee82 点击链接或者复制整段描述¥m_T0MqV¥后打开平安金管家APP";
+       String value = "【全民狂欢】 9af9f1b1902fc4ead2f1b5b2b4317aaa 椱°製这缎描述￥m_T0MqV￥后到→平安○金管家";
        String value1= "【开门迎财送红包喽！最低66元最高200元惊喜大红包等你来领！】 https:/actevo/201909-invite-packet/index.html?aid=20190926190926#/empty?urlToken=9af9f1b1902fc4ead2f1b5b2b4317aaa 点击链接或者复制这段描述￥m_T0MqV￥后打开平安金管家APP";
-
-       Pattern p = Pattern.compile("【(.*)】\\s(.*)\\s.*¥(.*)¥.*");
-        Matcher m = p.matcher(value);
+       String value2= "【全民狂欢】 9cc812df3d913bf8c9bd5c28165b578d ➊長按複制整段话→[红包]拿紅˙ω˙包￥m_T0MqV￥➋\uD83D\uDC49\uD83C\uDFFB♡平安♡金管家の最新版本➌就能拿\uD83D\uDCB0最少6⃣️6⃣️最多2⃣️0⃣️0⃣️️️";
+       Pattern p = Pattern.compile("【(.*)】\\s(.*)\\s.*￥(.*)￥.*");
+        Matcher m = p.matcher(value2);
         System.out.println(m.matches());
 
         System.out.println(m.groupCount());

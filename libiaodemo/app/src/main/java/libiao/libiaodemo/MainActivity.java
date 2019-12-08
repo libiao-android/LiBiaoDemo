@@ -19,7 +19,7 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 
 import libiao.libiaodemo.android.activity.DeviceInfoActivity;
-import libiao.libiaodemo.android.ui.video.VideoActivity;
+import libiao.libiaodemo.android.ui.UIActivity;
 
 public class MainActivity extends Activity {
 
@@ -78,7 +78,7 @@ public class MainActivity extends Activity {
     }
 
     public void ui(View view) {
-        Intent in = new Intent(this, VideoActivity.class);
+        Intent in = new Intent(this, UIActivity.class);
         startActivity(in);
     }
 

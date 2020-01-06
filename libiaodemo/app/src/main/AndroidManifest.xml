@@ -21,6 +21,8 @@
         <activity android:name=".android.ui.listview.ListViewActivity"/>
         <activity android:name=".android.ui.recyclerview.RecyclerViewActivity"/>
         <activity android:name=".android.ui.UIActivity"/>
+        <activity android:name=".android.ui.danmu.DanmuTestActivity"/>
+        <activity android:name=".android.ui.danmu.DanmuActivity"/>
     </application>
 
 </manifest>

@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import libiao.libiaodemo.R;
+import libiao.libiaodemo.android.ui.danmu.DanmuActivity;
+import libiao.libiaodemo.android.ui.danmu.DanmuTestActivity;
 import libiao.libiaodemo.android.ui.listview.ListViewActivity;
 import libiao.libiaodemo.android.ui.recyclerview.RecyclerViewActivity;
 import libiao.libiaodemo.android.ui.video.VideoActivity;
@@ -57,6 +59,11 @@ public class UIActivity extends Activity {
 
     public void video(View v) {
         Intent in = new Intent(this, VideoActivity.class);
+        startActivity(in);
+    }
+
+    public void danmu(View v) {
+        Intent in = new Intent(this, DanmuActivity.class);
         startActivity(in);
     }
 }

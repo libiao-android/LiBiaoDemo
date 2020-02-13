@@ -19,6 +19,7 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 
 import libiao.libiaodemo.android.activity.DeviceInfoActivity;
+import libiao.libiaodemo.android.glide.MemorySizeCalculator;
 import libiao.libiaodemo.android.ui.UIActivity;
 
 public class MainActivity extends Activity {
@@ -59,7 +60,8 @@ public class MainActivity extends Activity {
 
     public void okhttp(View view) {
         Intent in = new Intent(this, TestOkhttpActivity.class);
-        startActivity(in);
+        //startActivity(in);
+        new MemorySizeCalculator(this);
     }
 
     public void jni(View view) {

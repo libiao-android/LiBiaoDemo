@@ -8,4 +8,8 @@ public class JavaMain {
         Test1.INSTANCE.sayMessage("world");
         Test1.sayMessage(null);
     }
+
+    public static String format(String s) {
+        return s.isEmpty() ? null : s;
+    }
 }

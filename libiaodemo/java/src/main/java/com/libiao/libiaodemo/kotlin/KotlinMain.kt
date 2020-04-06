@@ -28,4 +28,9 @@ fun testClass(clazz: KClass<Test1>) {
 fun main() {
     val age = 18
     val name = "libiao"
+    test1(null)
+}
+
+fun test1(url : String?) {
+    print(url?:"111")
 }

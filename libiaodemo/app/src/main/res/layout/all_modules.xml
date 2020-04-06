@@ -1,73 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="libiao.libiaodemo.MainActivity"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:text="okhttp"
-        android:onClick="okhttp"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:text="jni"
-        android:onClick="jni"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:text="matrix"
-        android:onClick="matrix"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:text="lottie"
-        android:onClick="lottie"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:text="ui"
-        android:onClick="ui"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:text="exoplayer"
-        android:onClick="exoplayer"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:text="kotlin"
-        android:onClick="kotlin"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:text="deviceInfo"
-        android:onClick="deviceInfo"/>
-
-    <RelativeLayout
-        android:layout_marginLeft="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/yinying_bg"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp">
-        <TextView
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <Button
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
-            android:background="@drawable/button_bg"
-            android:text="1111111"/>
-    </RelativeLayout>
-</LinearLayout>
+            android:layout_height="60dp"
+            android:text="okhttp"
+            android:onClick="okhttp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="jni"
+            android:onClick="jni"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="matrix"
+            android:onClick="matrix"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="lottie"
+            android:onClick="lottie"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="ui"
+            android:onClick="ui"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="exoplayer"
+            android:onClick="exoplayer"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="kotlin"
+            android:onClick="kotlin"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="deviceInfo"
+            android:onClick="deviceInfo"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="fresco"
+                android:onClick="fresco"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="缓存详情"
+                android:onClick="frescoCacheDetail"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="glide"
+                android:onClick="glide"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="缓存详情"
+                android:onClick="glideCacheDetail"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/yinying_bg"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:background="@drawable/button_bg"
+                android:text="1111111"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

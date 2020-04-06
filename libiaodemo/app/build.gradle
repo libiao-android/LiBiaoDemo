@@ -10,6 +10,14 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+
+        ndk {
+            //armeabi-v7a存放的是32位的so文件。64位机器默认去查找是否存在arm64-v8a目录，如果存在，
+            // 就会使用（加载）该目录下合适的64位库，如果没有则回去lib下查找32位的库，
+            // 而fresco的draw-pipeline太完善了考虑了64位的机器所以他的arm64-v8a下有so库，
+            // 对应的系统就创建了lib 64的文件，而不再去找32位的库。
+            abiFilters 'armeabi-v7a'
+        }
     }
     buildTypes {
         release {
@@ -17,6 +25,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility 1.8
         targetCompatibility 1.8
@@ -38,4 +47,6 @@ dependencies {
     compile project(path: ':func:exoplayer')
     compile project(path: ':kotlin')
     compile 'com.github.ctiao:DanmakuFlameMaster:0.9.25'
+    compile 'com.facebook.fresco:fresco:0.9.0'
+    compile project(path: ':java')
 }

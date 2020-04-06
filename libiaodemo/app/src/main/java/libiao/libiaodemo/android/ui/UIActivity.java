@@ -12,6 +12,7 @@ import libiao.libiaodemo.android.ui.danmu.DanmuTestActivity;
 import libiao.libiaodemo.android.ui.listview.ListViewActivity;
 import libiao.libiaodemo.android.ui.recyclerview.RecyclerViewActivity;
 import libiao.libiaodemo.android.ui.video.VideoActivity;
+import libiao.libiaodemo.android.ui.video.videoeditor.VideoEditorActivity;
 
 public class UIActivity extends Activity {
 
@@ -58,7 +59,7 @@ public class UIActivity extends Activity {
 
 
     public void video(View v) {
-        Intent in = new Intent(this, VideoActivity.class);
+        Intent in = new Intent(this, VideoEditorActivity.class);
         startActivity(in);
     }
 

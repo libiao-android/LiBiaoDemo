@@ -15,6 +15,24 @@ extern "C" {
 JNIEXPORT jstring JNICALL Java_com_libiao_libiaodemo_jni_demo_JNITest_getString
   (JNIEnv *, jobject);
 
+JNIEXPORT jstring JNICALL Java_com_libiao_libiaodemo_jni_demo_JNITest_avformatInfo
+        (JNIEnv *, jobject);
+
+JNIEXPORT jstring JNICALL Java_com_libiao_libiaodemo_jni_demo_JNITest_avcodecInfo
+        (JNIEnv *, jobject);
+
+JNIEXPORT jstring JNICALL Java_com_libiao_libiaodemo_jni_demo_JNITest_avfilterInfo
+        (JNIEnv *, jobject);
+
+JNIEXPORT jstring JNICALL Java_com_libiao_libiaodemo_jni_demo_JNITest_configurationInfo
+        (JNIEnv *, jobject);
+
+JNIEXPORT jint JNICALL Java_com_libiao_libiaodemo_jni_demo_JNITest_run
+        (JNIEnv *, jobject, jobjectArray commands);
+
+JNIEXPORT jint JNICALL Java_com_libiao_libiaodemo_jni_demo_JNITest_getProgress
+        (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

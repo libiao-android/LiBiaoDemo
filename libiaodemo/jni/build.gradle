@@ -13,8 +13,8 @@ android {
 
         externalNativeBuild {
             cmake {
-                abiFilters "armeabi-v7a"
                 cppFlags "-frtti -fexceptions"
+                abiFilters "armeabi-v7a"
             }
         }
     }
@@ -26,9 +26,13 @@ android {
         }
     }
 
+    sourceSets.main {
+        jniLibs.srcDirs = ['src/main/jniLibs']
+    }
+
     externalNativeBuild {
         cmake {
-            path "src/main/cpp/CMakeLists.txt"
+            path "CMakeLists.txt"
         }
     }
 

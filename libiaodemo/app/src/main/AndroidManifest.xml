@@ -27,6 +27,7 @@
         <activity android:name=".android.glide.GlideTestActivity"/>
         <activity android:name=".android.ui.video.videoeditor.VideoSelectActivity"/>
         <activity android:name=".android.ui.video.videoeditor.VideoEditorActivity"/>
+        <activity android:name=".android.ui.constraint.ConstraintActivity"/>
         <meta-data
             android:name="libiao.libiaodemo.android.ui.recyclerview.LBGlideModule"
             android:value="GlideModule" />

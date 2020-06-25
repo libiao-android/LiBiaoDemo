@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context="libiao.libiaodemo.MainActivity"
     android:orientation="vertical"
+    android:background="#000000"
     android:gravity="center_horizontal">
 
     <Button
@@ -54,6 +55,55 @@
         android:layout_height="60dp"
         android:text="弹幕"
         android:onClick="danmu"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="约束布局"
+        android:onClick="constraint"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="动态改变TV长度"
+        android:onClick="changeTvLength"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp">
+        <View
+            android:id="@+id/view1"
+            android:background="@drawable/view1_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/view2"/>
+        <View
+            android:layout_centerHorizontal="true"
+            android:id="@+id/view2"
+            android:background="@drawable/view2_bg"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"/>
+
+        <View
+            android:layout_toRightOf="@+id/view2"
+            android:id="@+id/view3"
+            android:background="@drawable/view3_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv"
+        android:textSize="13dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content" />
+
+    <include
+        layout="@layout/live_func_chat"
+        android:layout_width="492px"
+        android:layout_height="400px"
+        />
 
 
 </LinearLayout>

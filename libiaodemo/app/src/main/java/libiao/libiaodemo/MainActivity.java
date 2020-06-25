@@ -37,6 +37,7 @@ import libiao.libiaodemo.android.fresco.FrescoTestActivity;
 import libiao.libiaodemo.android.glide.GlideTestActivity;
 import libiao.libiaodemo.android.glide.MemorySizeCalculator;
 import libiao.libiaodemo.android.ui.UIActivity;
+import libiao.libiaodemo.android.utils.Base64Utils;
 
 public class MainActivity extends Activity {
 
@@ -66,6 +67,8 @@ public class MainActivity extends Activity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        Log.i("libiao", "Build.MODEL = " + Build.MODEL);
     }
 
     @Override
@@ -105,9 +108,15 @@ public class MainActivity extends Activity {
         Intent in = new Intent(this, TestOkhttpActivity.class);
         //startActivity(in);
         //new MemorySizeCalculator(this);
-        dfaHelper = new DfaHelper();
-        List<String> list = readLoaclTxt(this);
-        dfaHelper.createSensitiveWordMap(list);
+
+//        dfaHelper = new DfaHelper();
+//        List<String> list = readLoaclTxt(this);
+//        dfaHelper.createSensitiveWordMap(list);
+
+        String str = Base64Utils.decodeToString("asdf");
+        Log.i("libiao", "str = " + str);
+        String data = Base64Utils.encodeToString(str);
+        Log.i("libiao", "data = " + data);
     }
 
     public void jni(View view) {

@@ -1,11 +1,16 @@
 package com.libiao.libiaodemo.kotlin
 
 var a : String = "string"
-var a2 : String? = null
+var a2 : String? = "a"
+val a3 = true
 fun main() {
     var data : String? = null
     val live = data as String?
-    println("live = " + live)
+    //println("live = " + live)
+
+    a?.let { a+a3.toString() }
+
+    println(a2?.plus(a3))
 
 //    println("hello world")
 //    val items = listOf<Int>(1, 2, 3, 4, 5)

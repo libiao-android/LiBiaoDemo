@@ -1,6 +1,7 @@
 package com.libiao.libiaodemo.file;
 
 import java.io.File;
+import java.util.Base64;
 
 public class Test1 {
 

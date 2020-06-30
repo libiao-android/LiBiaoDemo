@@ -3,9 +3,10 @@ package com.airbnb.lottie.model.layer;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.RectF;
-import android.support.annotation.FloatRange;
-import android.support.annotation.Nullable;
-import android.support.v4.util.LongSparseArray;
+import android.util.LongSparseArray;
+
+import androidx.annotation.FloatRange;
+import androidx.annotation.Nullable;
 
 import com.airbnb.lottie.L;
 import com.airbnb.lottie.LottieComposition;

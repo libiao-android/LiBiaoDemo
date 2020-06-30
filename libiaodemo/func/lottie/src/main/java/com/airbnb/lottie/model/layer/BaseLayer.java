@@ -8,9 +8,9 @@ import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
-import android.support.annotation.CallSuper;
-import android.support.annotation.FloatRange;
-import android.support.annotation.Nullable;
+import androidx.annotation.CallSuper;
+import androidx.annotation.FloatRange;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import com.airbnb.lottie.L;
@@ -33,8 +33,11 @@ import java.util.List;
 
 public abstract class BaseLayer
     implements DrawingContent, BaseKeyframeAnimation.AnimationListener, KeyPathElement {
-  private static final int SAVE_FLAGS = Canvas.CLIP_SAVE_FLAG | Canvas.CLIP_TO_LAYER_SAVE_FLAG |
-      Canvas.MATRIX_SAVE_FLAG;
+  public static final int CLIP_SAVE_FLAG = 0x02;
+  public static final int CLIP_TO_LAYER_SAVE_FLAG = 0x10;
+  public static final int MATRIX_SAVE_FLAG = 0x01;
+  private static final int SAVE_FLAGS = CLIP_SAVE_FLAG | CLIP_TO_LAYER_SAVE_FLAG |
+      MATRIX_SAVE_FLAG;
 
   @Nullable
   static BaseLayer forModel(

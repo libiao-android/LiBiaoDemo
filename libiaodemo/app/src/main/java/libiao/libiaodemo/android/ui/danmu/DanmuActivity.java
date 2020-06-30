@@ -2,7 +2,7 @@ package libiao.libiaodemo.android.ui.danmu;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 
 import java.util.ArrayList;

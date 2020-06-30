@@ -1,7 +1,7 @@
 package com.airbnb.lottie;
 
-import android.support.v4.util.Pair;
 import android.util.Log;
+import android.util.Pair;
 
 import com.airbnb.lottie.utils.MeanCalculator;
 

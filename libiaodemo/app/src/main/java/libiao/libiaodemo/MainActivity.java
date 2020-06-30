@@ -12,6 +12,7 @@ import android.view.View;
 
 import com.airbnb.lottie.test.LottieTestActivity;
 import com.facebook.common.util.ByteConstants;
+import com.libiao.libiaodemo.component.ComponentUI;
 import com.libiao.libiaodemo.exoplayer.activity.TestExoplayerActivity;
 import com.libiao.libiaodemo.jni.TestJniActivity;
 import com.libiao.libiaodemo.kotlin.FirstKotlinActivity;
@@ -191,5 +192,10 @@ public class MainActivity extends Activity {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void component(View view) {
+        Intent in = new Intent(this, ComponentUI.class);
+        startActivity(in);
     }
 }

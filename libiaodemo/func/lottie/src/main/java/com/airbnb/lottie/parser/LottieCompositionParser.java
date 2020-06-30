@@ -1,9 +1,10 @@
 package com.airbnb.lottie.parser;
 
 import android.graphics.Rect;
-import android.support.v4.util.LongSparseArray;
-import android.support.v4.util.SparseArrayCompat;
 import android.util.JsonReader;
+import android.util.LongSparseArray;
+
+import androidx.collection.SparseArrayCompat;
 
 import com.airbnb.lottie.L;
 import com.airbnb.lottie.LottieComposition;

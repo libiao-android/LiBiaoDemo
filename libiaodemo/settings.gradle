@@ -9,4 +9,5 @@ include ':app', ':kotlin',
         ':okhttp',
         ':jni',
         ':func:lottie',
-        ':func:exoplayer'
+        ':func:exoplayer',
+        ':func:androidcomponent'

@@ -4,13 +4,14 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.AsyncTask;
-import android.support.annotation.Nullable;
-import android.support.annotation.RawRes;
-import android.support.annotation.RestrictTo;
-import android.support.v4.util.LongSparseArray;
-import android.support.v4.util.SparseArrayCompat;
+import androidx.annotation.Nullable;
+import androidx.annotation.RawRes;
+import androidx.annotation.RestrictTo;
+import androidx.collection.SparseArrayCompat;
+
 import android.util.JsonReader;
 import android.util.Log;
+import android.util.LongSparseArray;
 
 import com.airbnb.lottie.model.Font;
 import com.airbnb.lottie.model.FontCharacter;

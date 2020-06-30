@@ -1,6 +1,6 @@
 package com.airbnb.lottie.model.content;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import com.airbnb.lottie.L;

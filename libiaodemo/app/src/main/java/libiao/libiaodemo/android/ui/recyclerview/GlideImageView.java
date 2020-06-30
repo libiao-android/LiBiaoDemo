@@ -4,12 +4,14 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 
+import androidx.appcompat.widget.AppCompatImageView;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 
-public class GlideImageView extends android.support.v7.widget.AppCompatImageView {
+public class GlideImageView extends AppCompatImageView {
 
     private Target<GlideDrawable> mTarget;
     private int position = -1;

@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.libiao.libiaodemo.component">
+    <application>
+        <activity android:name=".ComponentUI"/>
+        <activity android:name=".workmanager.WorkManagerTestActivity"/>
+    </application>
+</manifest>

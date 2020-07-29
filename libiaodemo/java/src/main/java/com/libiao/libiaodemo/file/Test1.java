@@ -15,7 +15,10 @@ public class Test1 {
 
         // /Users/libiao657/Documents/libiaodemo/libiaodemo/java/build/classes/main/
         //build 目录下？？
-        System.out.println(Test1.class.getResource("/").getPath());
-        System.out.println(System.currentTimeMillis());
+        //System.out.println(Test1.class.getResource("/").getPath());
+        //System.out.println(System.currentTimeMillis());
+
+
+        System.out.println(Math.sin(180 * Math.PI / 180));
     }
 }

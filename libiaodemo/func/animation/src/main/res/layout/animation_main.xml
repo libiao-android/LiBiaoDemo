@@ -1,17 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:id="@+id/rotation"
+        android:background="#00989898"
+        android:layout_alignParentRight="true"
+        android:layout_width="100dp"
+        android:layout_height="50dp">
+        <ImageView
+            android:background="#444444"
+            android:layout_alignParentRight="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+    </RelativeLayout>
+
     <Button
+        android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="点赞动效"
         android:onClick="like"/>
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_below="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="收到点赞"
+        android:onClick="receiveLike"/>
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_below="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送点赞"
+        android:onClick="postLike"/>
 
     <com.sum.slike.SuperLikeLayout
         android:id="@+id/super_like_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-</LinearLayout>
+    <FrameLayout
+        android:id="@+id/receive_like_view"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="25dp"
+        android:layout_width="75dp"
+        android:layout_height="256dp">
+
+    </FrameLayout>
+
+    <com.libiao.libiaodemo.animation.view.EruptionLikeView
+        android:id="@+id/eruption_like_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.libiao.libiaodemo.animation.view.EruptionLikeView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:visibility="gone"
+        android:id="@+id/lottie_like"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        app:lottie_fileName="lottie/like1/data.json"
+        app:lottie_imageAssetsFolder="lottie/like1/images/"/>
+
+</RelativeLayout>

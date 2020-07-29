@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.work.*
 import com.libiao.libiaodemo.component.R
+import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
 class WorkManagerTestActivity : AppCompatActivity() {
@@ -41,7 +42,8 @@ class WorkManagerTestActivity : AppCompatActivity() {
                 .setInputData(workDataOf("done" to "compressWorker"))
                 .build()
 
-        WorkManager.getInstance(this).beginWith(listOf(filter1Worker, filter2Worker, filter3Worker)).then(compressWorker).then(uploadWorkRequest).enqueue()
+        WorkManager.getInstance(this).enqueue(uploadWorkRequest)
+       // WorkManager.getInstance(this).beginWith(listOf(filter1Worker, filter2Worker, filter3Worker)).then(compressWorker).then(uploadWorkRequest).enqueue()
 
         WorkManager.getInstance(this).getWorkInfoByIdLiveData(uploadWorkRequest.id).observe(this, Observer {
             Log.i("libiao", "uploadWorkRequest: ${Thread.currentThread().name}")
@@ -73,11 +75,12 @@ class WorkManagerTestActivity : AppCompatActivity() {
 
         })
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            WorkManager.getInstance(this).cancelAllWork()
-        }, 8000)
-
-        WorkManager.getInstance(this).beginUniqueWork("yuanting", ExistingWorkPolicy.KEEP, listOf(filter1Worker, filter2Worker, filter3Worker))
+//        Handler(Looper.getMainLooper()).postDelayed({
+//            WorkManager.getInstance(this).cancelAllWork()
+//        }, 8000)
+//
+       // WorkManager.getInstance(this).beginUniqueWork("yuanting", ExistingWorkPolicy.KEEP, listOf(filter1Worker, filter2Worker, filter3Worker))
 
     }
+
 }

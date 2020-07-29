@@ -29,6 +29,9 @@ class CallbackWorker(context: Context, params: WorkerParameters) : ListenableWor
                     }
                 }
             }
+
+            //completer.addCancellationListener(cancelDownloadsRunnable, executor);
+
             for (i in 0..99) {
                 //downloadAsynchronously("https://www.google.com", callback)
             }

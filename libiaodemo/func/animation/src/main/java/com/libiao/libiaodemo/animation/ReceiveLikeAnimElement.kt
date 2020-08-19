@@ -14,7 +14,7 @@ class ReceiveLikeAnimElement(var context: Context, var container: ViewGroup, var
 
     private val mViewList = LinkedList<ImageView>()
 
-    override fun onAnim(startX: Int, startY: Int) {
+    override fun onAnim(startX: Int, startY: Int, type: Int) {
         var view = mViewList.poll()
         if(view == null) {
             view = ImageView(context)

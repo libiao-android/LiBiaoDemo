@@ -75,15 +75,16 @@ class EruptionLikeView : FrameLayout {
 
     }
 
-    fun showAnim(x: Int, y: Int, showText: Boolean) {
+    fun showAnim(x: Int, y: Int, showText: Boolean, type: Int = 0) {
         Log.i("libiao", "showAnim")
-        mPostLikeAnimElement?.onAnim(x, y)
+        mPostLikeAnimElement?.onAnim(x, y, type)
         if(showText) {
-            mPostLikeTextElement?.onAnim(x - 100, y - 250)
+            mPostLikeTextElement?.onAnim(x - 50, y - 200)
         }
     }
 
     fun stop() {
+        mPostLikeAnimElement?.onDestroy()
         mPostLikeTextElement?.onDestroy()
     }
 }

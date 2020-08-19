@@ -4,11 +4,17 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.AssetManager;
+import android.net.ConnectivityManager;
+
+import android.net.NetworkRequest;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import androidx.annotation.RequiresApi;
 
 import com.airbnb.lottie.test.LottieTestActivity;
 import com.facebook.common.util.ByteConstants;
@@ -71,6 +77,8 @@ public class MainActivity extends Activity {
         }
 
         Log.i("libiao", "Build.MODEL = " + Build.MODEL);
+
+        initMonitor();
     }
 
     @Override
@@ -203,5 +211,28 @@ public class MainActivity extends Activity {
     public void animation(View view) {
         Intent in = new Intent(this, AnimationActivity.class);
         startActivity(in);
+    }
+
+    @RequiresApi(
+            api = 21
+    )
+    ConnectivityManager.NetworkCallback networkCallback = new ConnectivityManager.NetworkCallback() {
+
+    };
+
+    private void initMonitor() {
+        Log.i("libiao", "Build.VERSION.SDK_INT = " + Build.VERSION.SDK_INT);
+        ConnectivityManager connectivityManager = (ConnectivityManager)this.getSystemService("connectivity");
+        if (Build.VERSION.SDK_INT >= 26) {
+            connectivityManager.registerDefaultNetworkCallback(this.networkCallback);
+        } else if (Build.VERSION.SDK_INT >= 21) {
+            NetworkRequest.Builder builder = new NetworkRequest.Builder();
+            NetworkRequest request = builder.build();
+            connectivityManager.registerNetworkCallback(request, this.networkCallback);
+        } else {
+            IntentFilter intentFilter = new IntentFilter();
+            intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+        }
+
     }
 }

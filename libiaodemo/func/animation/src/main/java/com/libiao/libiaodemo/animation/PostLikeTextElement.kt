@@ -33,7 +33,7 @@ class PostLikeTextElement(var context: Context, var container: ViewGroup, var pr
         container.addView(mTextParent)
     }
 
-    override fun onAnim(startX: Int, startY: Int) {
+    override fun onAnim(startX: Int, startY: Int, type: Int) {
         var x = startX
         var y = startY
         if(x < 0) x = 0
@@ -78,7 +78,7 @@ class PostLikeTextElement(var context: Context, var container: ViewGroup, var pr
                 scaleX.repeatCount = ValueAnimator.INFINITE
                 val scaleY = ObjectAnimator.ofFloat(textView, "scaleY", 1F, 1.3F, 1F)
                 scaleY.repeatCount = ValueAnimator.INFINITE
-                mScaleAnimSet?.duration = 200
+                mScaleAnimSet?.duration = 240
                 mScaleAnimSet?.play(scaleX)?.with(scaleY)
                 mScaleAnimSet?.start()
             }

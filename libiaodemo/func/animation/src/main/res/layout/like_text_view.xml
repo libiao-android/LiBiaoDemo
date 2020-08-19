@@ -6,27 +6,35 @@
     android:layout_height="wrap_content">
 
     <ImageView
+        android:visibility="gone"
         android:src="@mipmap/text0"
         android:id="@+id/iv_like_text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="52px"
+        android:layout_height="86px" />
     <ImageView
+        android:visibility="gone"
         android:id="@+id/iv_like_text2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_marginLeft="-4px"
+        android:layout_width="52px"
+        android:layout_height="86px" />
     <ImageView
+        android:visibility="gone"
         android:id="@+id/iv_like_text3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_marginLeft="-4px"
+        android:layout_width="52px"
+        android:layout_height="86px" />
     <ImageView
+        android:visibility="gone"
         android:id="@+id/iv_like_text4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_marginLeft="-4px"
+        android:layout_width="52px"
+        android:layout_height="86px" />
     <ImageView
         android:layout_marginRight="10dp"
         android:src="@mipmap/text"
         android:id="@+id/iv_like_text5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_marginLeft="-8px"
+        android:layout_width="130px"
+        android:layout_height="130px" />
 
 </LinearLayout>

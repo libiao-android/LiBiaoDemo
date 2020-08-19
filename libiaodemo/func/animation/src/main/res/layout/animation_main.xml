@@ -70,4 +70,15 @@
         app:lottie_fileName="lottie/like1/data.json"
         app:lottie_imageAssetsFolder="lottie/like1/images/"/>
 
+    <com.libiao.libiaodemo.animation.view.FuncLayout
+        android:id="@+id/func"
+        android:background="#00FF1212"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1111111111111111111111111"/>
+    </com.libiao.libiaodemo.animation.view.FuncLayout>
+
 </RelativeLayout>

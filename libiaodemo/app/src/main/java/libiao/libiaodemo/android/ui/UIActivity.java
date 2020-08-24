@@ -28,6 +28,7 @@ import libiao.libiaodemo.R;
 import libiao.libiaodemo.android.ui.danmu.DanmuActivity;
 import libiao.libiaodemo.android.ui.listview.ListViewActivity;
 import libiao.libiaodemo.android.ui.recyclerview.RecyclerViewActivity;
+import libiao.libiaodemo.android.ui.touchevent.EventActivity;
 import libiao.libiaodemo.android.ui.video.videoeditor.VideoEditorActivity;
 
 public class UIActivity extends Activity {
@@ -183,5 +184,9 @@ public class UIActivity extends Activity {
         animator1.setDuration(1600);
         animator1.setRepeatCount(-1);
         animator1.start();
+    }
+
+    public void touchEvent(View v) {
+        startActivity(new Intent(this, EventActivity.class));
     }
 }

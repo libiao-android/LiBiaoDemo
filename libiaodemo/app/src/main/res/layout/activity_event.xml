@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<libiao.libiaodemo.android.ui.touchevent.Layout1 xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <libiao.libiaodemo.android.ui.touchevent.Layout2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <libiao.libiaodemo.android.ui.touchevent.Layout3
+            android:layout_centerVertical="true"
+            android:id="@+id/recycler_view"
+            android:layout_width="200dp"
+            android:layout_height="500dp"></libiao.libiaodemo.android.ui.touchevent.Layout3>
+    </libiao.libiaodemo.android.ui.touchevent.Layout2>
+
+</libiao.libiaodemo.android.ui.touchevent.Layout1>

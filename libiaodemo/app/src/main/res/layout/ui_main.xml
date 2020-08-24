@@ -68,6 +68,12 @@
         android:text="动态改变TV长度"
         android:onClick="changeTvLength"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="事件分发"
+        android:onClick="touchEvent"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="2dp">

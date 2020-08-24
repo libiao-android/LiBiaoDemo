@@ -3,11 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <TextView
         android:background="@drawable/live_chat_new_count_bg"
         android:id="@+id/live_func_chat_new_count"

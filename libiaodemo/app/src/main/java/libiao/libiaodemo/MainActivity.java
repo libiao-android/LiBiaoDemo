@@ -78,7 +78,7 @@ public class MainActivity extends Activity {
 
         Log.i("libiao", "Build.MODEL = " + Build.MODEL);
 
-        initMonitor();
+        //initMonitor();
     }
 
     @Override

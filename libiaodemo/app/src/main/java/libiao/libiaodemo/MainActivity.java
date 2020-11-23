@@ -11,6 +11,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkRequest;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Debug;
 import android.util.Log;
 import android.view.View;
 
@@ -78,7 +79,24 @@ public class MainActivity extends Activity {
 
         Log.i("libiao", "Build.MODEL = " + Build.MODEL);
 
+//        String resId = "drawable://2131231322";
+//        String id = resId.substring(11);
+//        id = Integer.toHexString(Integer.parseInt(id));
+//        Log.i("libiao", "id: " + resId.startsWith("drawable://"));
+
         //initMonitor();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    private void printGcInfo() {
+        String gcCount = Debug.getRuntimeStat("art.gc.gc-count");
+        String gcTime = Debug.getRuntimeStat("art.gc.gc-time");
+        String bloclGcCount = Debug.getRuntimeStat("art.gc.blocking-gc-count");
+        String bloclGcTime = Debug.getRuntimeStat("art.gc.blocking-gc-time");
+        Log.i("libiao", "gcCount = " + gcCount);
+        Log.i("libiao", "gcTime = " + gcTime);
+        Log.i("libiao", "bloclGcCount = " + bloclGcCount);
+        Log.i("libiao", "bloclGcTime = " + bloclGcTime);
     }
 
     @Override
@@ -211,6 +229,10 @@ public class MainActivity extends Activity {
     public void animation(View view) {
         Intent in = new Intent(this, AnimationActivity.class);
         startActivity(in);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            printGcInfo();
+        }
     }
 
     @RequiresApi(

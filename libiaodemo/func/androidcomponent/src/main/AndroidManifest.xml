@@ -3,5 +3,6 @@
     <application>
         <activity android:name=".ComponentUI"/>
         <activity android:name=".workmanager.WorkManagerTestActivity"/>
+        <activity android:name=".plugin.ProxyPluginActivity"/>
     </application>
 </manifest>

@@ -4,7 +4,9 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -12,6 +14,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import androidx.annotation.Nullable;
+
+import android.provider.MediaStore;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -20,9 +24,14 @@ import android.text.style.DrawableMarginSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
 import android.text.style.RelativeSizeSpan;
+import android.util.Base64;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 import libiao.libiaodemo.R;
 import libiao.libiaodemo.android.ui.danmu.DanmuActivity;
@@ -58,6 +67,25 @@ public class UIActivity extends Activity {
         view1 = findViewById(R.id.view1);
         view2 = findViewById(R.id.view2);
         view3 = findViewById(R.id.view3);
+    }
+
+    public void view_to_bitmap(View vi) {
+        View view = LayoutInflater.from(this).inflate(R.layout.view_to_bitmap, null, false);
+
+        int measuredWidth = View.MeasureSpec.makeMeasureSpec(990, View.MeasureSpec.EXACTLY);
+        int measuredHeight = View.MeasureSpec.makeMeasureSpec(792, View.MeasureSpec.EXACTLY);
+        view.measure(measuredWidth, measuredHeight);
+        //调用layout方法布局后，可以得到view的尺寸大小
+        view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+        Bitmap bmp = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.RGB_565);
+        Canvas c = new Canvas(bmp);
+        c.drawColor(Color.WHITE);
+        view.draw(c);
+
+        String base6 = bitmapToBase64(bmp);
+        Log.i("libiao", "base6 = " + base6);
+
+        //MediaStore.Images.Media.insertImage(this.getContentResolver(), bmp, "菜单", "libiao_" + System.currentTimeMillis());
     }
 
     public void listview(View v) {
@@ -188,5 +216,45 @@ public class UIActivity extends Activity {
 
     public void touchEvent(View v) {
         startActivity(new Intent(this, EventActivity.class));
+    }
+
+    public static String bitmapToBase64(Bitmap bitmap) {
+
+        String result = null;
+        ByteArrayOutputStream baos = null;
+        try {
+            if (bitmap != null) {
+                baos = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+
+                baos.flush();
+                baos.close();
+
+                byte[] bitmapBytes = baos.toByteArray();
+                result = Base64.encodeToString(bitmapBytes, Base64.DEFAULT);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (baos != null) {
+                    baos.flush();
+                    baos.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
+    }
+
+    /**
+     * base64转为bitmap
+     * @param base64Data
+     * @return
+     */
+    public static Bitmap base64ToBitmap(String base64Data) {
+        byte[] bytes = Base64.decode(base64Data, Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
     }
 }

@@ -9,6 +9,12 @@
     android:gravity="center_horizontal">
 
     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="view-to-bitmap"
+        android:onClick="view_to_bitmap"/>
+
+    <Button
         android:background="@drawable/yinying_btn"
         android:layout_width="wrap_content"
         android:layout_height="60dp"

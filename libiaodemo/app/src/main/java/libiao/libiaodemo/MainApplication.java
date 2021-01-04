@@ -19,6 +19,7 @@ import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.facebook.imagepipeline.listener.RequestListener;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.libiao.libiaodemo.matrix.MatrixInit;
+import com.qihoo360.replugin.RePlugin;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -38,9 +39,17 @@ public class MainApplication extends Application {
     public static Context getContext() {
         return sApplication;
     }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        RePlugin.App.attachBaseContext(this);
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
+        RePlugin.App.onCreate();
         sApplication = this;
         MatrixInit.init(this);
         RequestListener requestListener = new RequestListener() {

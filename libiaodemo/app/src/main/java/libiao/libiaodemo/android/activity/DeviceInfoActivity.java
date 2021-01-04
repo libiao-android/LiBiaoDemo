@@ -5,12 +5,15 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Debug;
+import android.os.Handler;
 import android.os.Process;
 import androidx.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -21,6 +24,8 @@ public class DeviceInfoActivity extends Activity {
     private TextView mMaxheapTv;
     private TextView mUsedHeapTv;
     private TextView mPssTv;
+
+    Handler mHandler = new Handler();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +43,12 @@ public class DeviceInfoActivity extends Activity {
         mPssTv = findViewById(R.id.tv_device_info_pss);
         mPssTv.setText("app已使用的物理内存：" + getProcessPSS()/1024 + " M");
 
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                getStringFromFile("/proc/stat");
+            }
+        });
     }
 
     /**
@@ -142,5 +153,25 @@ public class DeviceInfoActivity extends Activity {
         } catch (IOException e) {
         }
         return initial_memory;// Byte转换为KB或者MB，内存大小规格化
+    }
+
+    public static String getStringFromFile(String filename) {
+        String FileName = filename;
+        String fileStr = "";
+        File myFile = new File(FileName);
+        if (!myFile.exists()) {
+            System.err.println("Can't Find " + FileName);
+        }
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(myFile));
+            String str;
+            while ((str = in.readLine()) != null) {
+                fileStr += str;
+            }
+            in.close();
+        } catch (Exception e) {
+            Log.e("libiao", "exception = " + e.getMessage());
+        }
+        return fileStr;
     }
 }

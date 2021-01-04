@@ -31,6 +31,24 @@ android {
         targetCompatibility 1.8
     }
 }
+apply plugin: 'replugin-host-gradle'
+
+repluginHostConfig {
+    /**
+     * 是否使用 AppCompat 库
+     * 不需要个性化配置时，无需添加
+     */
+    useAppCompat = true
+    persistentEnable = false
+    /**
+     * 背景不透明的坑的数量
+     * 不需要个性化配置时，无需添加
+     */
+    countNotTranslucentStandard = 6
+    countNotTranslucentSingleTop = 2
+    countNotTranslucentSingleTask = 3
+    countNotTranslucentSingleInstance = 2
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -53,6 +71,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
+
+    compile 'com.qihoo360.replugin:replugin-host-lib:2.3.4'
 }
 
 configurations.all {

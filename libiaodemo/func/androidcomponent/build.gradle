@@ -60,6 +60,7 @@ dependencies {
     //androidTestImplementation "androidx.work:work-testing:$work_version"
 
     implementation "androidx.concurrent:concurrent-futures-ktx:1.1.0-alpha01"
+    implementation 'com.permissionx.guolindev:permissionx:1.1.0'
     compile project(path: ':okhttp')
 
 

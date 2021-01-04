@@ -11,4 +11,10 @@
         android:onClick="workManager"
         android:text="WorkManager"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="plugin"
+        android:text="插件化"/>
+
 </LinearLayout>

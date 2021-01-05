@@ -134,17 +134,17 @@ public class MainActivity extends Activity {
     DfaHelper dfaHelper;
     public void okhttp(View view) {
         Intent in = new Intent(this, TestOkhttpActivity.class);
-        //startActivity(in);
+        startActivity(in);
         //new MemorySizeCalculator(this);
 
 //        dfaHelper = new DfaHelper();
 //        List<String> list = readLoaclTxt(this);
 //        dfaHelper.createSensitiveWordMap(list);
 
-        String str = Base64Utils.decodeToString("asdf");
-        Log.i("libiao", "str = " + str);
-        String data = Base64Utils.encodeToString(str);
-        Log.i("libiao", "data = " + data);
+//        String str = Base64Utils.decodeToString("asdf");
+//        Log.i("libiao", "str = " + str);
+//        String data = Base64Utils.encodeToString(str);
+//        Log.i("libiao", "data = " + data);
     }
 
     public void jni(View view) {

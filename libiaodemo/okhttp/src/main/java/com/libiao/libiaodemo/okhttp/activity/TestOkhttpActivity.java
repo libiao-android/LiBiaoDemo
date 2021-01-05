@@ -1,9 +1,11 @@
 package com.libiao.libiaodemo.okhttp.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import android.util.Log;
+import android.view.View;
 
 import com.libiao.libiaodemo.okhttp.R;
 
@@ -24,26 +26,26 @@ public class TestOkhttpActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    OkHttpClient client = new OkHttpClient();
-                    Request request = new Request.Builder()
-                            .url(appendParam("http://www.163.com?xx=1", "taid", UUID.randomUUID().toString()))
-                            .build();
-                    okhttp3.Response response = client.newCall(request).execute();
-
-                    String responseSource = response.networkResponse() != null
-                            ? ("(network: " + response.networkResponse().code() + " over " + response.protocol() + ")")
-                            : "(cache)";
-
-                    Log.i("libiao", "responseSource = " + responseSource);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    OkHttpClient client = new OkHttpClient();
+//                    Request request = new Request.Builder()
+//                            .url(appendParam("http://www.163.com?xx=1", "taid", UUID.randomUUID().toString()))
+//                            .build();
+//                    okhttp3.Response response = client.newCall(request).execute();
+//
+//                    String responseSource = response.networkResponse() != null
+//                            ? ("(network: " + response.networkResponse().code() + " over " + response.protocol() + ")")
+//                            : "(cache)";
+//
+//                    Log.i("libiao", "responseSource = " + responseSource);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }).start();
     }
 
     public static String appendParam(String url, String key, String value) {
@@ -78,5 +80,9 @@ public class TestOkhttpActivity extends Activity {
             newUrl += ("?" + key + "=" + value);
         }
         return newUrl + anchor;
+    }
+
+    public void sharesInfo(View v) {
+        startActivity(new Intent(this, SharesInfoActivity.class));
     }
 }

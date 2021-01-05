@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_title_item"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp" />
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_title_item"
+            android:id="@+id/tv_valuation_item"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            />
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/tv_valuation_item"
+            android:id="@+id/tv_price_item"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/tv_price_item"
+            android:id="@+id/tv_up_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </RelativeLayout>
+</FrameLayout>

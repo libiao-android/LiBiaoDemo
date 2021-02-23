@@ -11,21 +11,12 @@ buildscript {
 
         InetAddress addr = InetAddress.getLocalHost()
         String ip = addr.getHostAddress()
-        if (ip != null && ip.startsWith("10.")) {//判断是否是内网环境，内网的ip是以10.开头，内网走平安科技内网仓库
-            maven {
-                url "http://maven.paic.com.cn/repository/maven-public/"// 对应阿里仓库 https://maven.aliyun.com/repository/central/
-            }
-            maven {
-                url "http://maven.paic.com.cn/repository/jfrog-gradle-plugins"//代理了http://repo.jfrog.org/artifactory/gradle-plugins，聚合包含https://plugins.gradle.org/m2/
-            }
-        } else {//外网
-            maven {//许多插件下载不下来的原因是由于这个仓库无法下载。优先配置这个仓库
-                url "https://plugins.gradle.org/m2/"
-            }
-            jcenter()
-            mavenCentral()
-            google()
+        maven {//许多插件下载不下来的原因是由于这个仓库无法下载。优先配置这个仓库
+            url "https://plugins.gradle.org/m2/"
         }
+        jcenter()
+        mavenCentral()
+        google()
 //
 //        google()
 //        jcenter()
@@ -46,22 +37,12 @@ allprojects {
     repositories {
         InetAddress addr = InetAddress.getLocalHost()
         String ip = addr.getHostAddress()
-        if (ip != null && ip.startsWith("10.")) {//判断是否是内网环境，内网的ip是以10.开头，内网走平安科技内网仓库
-            maven {
-                url "http://maven.paic.com.cn/repository/maven-public/"// 对应阿里仓库 https://maven.aliyun.com/repository/central/
-            }
-            maven {
-                url "http://maven.paic.com.cn/repository/jfrog-gradle-plugins"//代理了http://repo.jfrog.org/artifactory/gradle-plugins，聚合包含https://plugins.gradle.org/m2/
-            }
-        } else {//外网
-            maven {//许多插件下载不下来的原因是由于这个仓库无法下载。优先配置这个仓库
-                url "https://plugins.gradle.org/m2/"
-            }
-            jcenter()
-            mavenCentral()
-            google()
-            maven {url 'http://developer.huawei.com/repo/'}
+        maven {//许多插件下载不下来的原因是由于这个仓库无法下载。优先配置这个仓库
+            url "https://plugins.gradle.org/m2/"
         }
+        jcenter()
+        mavenCentral()
+        google()
 //        google()
 //        jcenter()
 //        maven {url 'http://developer.huawei.com/repo/'}

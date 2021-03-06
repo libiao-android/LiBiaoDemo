@@ -1,4 +1,4 @@
-include ':app', ':kotlin',
+include ':app', ':kotlin', ':docs',
         ':matrix:demo',
         ':matrix:matrix-android-lib',
         ':matrix:matrix-android-commons',

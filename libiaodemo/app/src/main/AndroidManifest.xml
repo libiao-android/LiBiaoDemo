@@ -31,6 +31,7 @@
         <activity android:name=".android.ui.video.videoeditor.VideoEditorActivity"/>
         <activity android:name=".android.ui.constraint.ConstraintActivity"/>
         <activity android:name=".android.ui.touchevent.EventActivity"/>
+        <activity android:name=".flutter.FlutterTestActivity"/>
         <meta-data
             android:name="libiao.libiaodemo.android.ui.recyclerview.LBGlideModule"
             android:value="GlideModule" />

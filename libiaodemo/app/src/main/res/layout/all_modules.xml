@@ -99,6 +99,11 @@
             android:layout_height="60dp"
             android:onClick="animation"
             android:text="动画"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:onClick="flutter"
+            android:text="FLUTTER"/>
 
         <RelativeLayout
             android:layout_marginLeft="18dp"

@@ -47,6 +47,7 @@ import libiao.libiaodemo.android.glide.GlideTestActivity;
 import libiao.libiaodemo.android.glide.MemorySizeCalculator;
 import libiao.libiaodemo.android.ui.UIActivity;
 import libiao.libiaodemo.android.utils.Base64Utils;
+import libiao.libiaodemo.flutter.FlutterTestActivity;
 
 public class MainActivity extends Activity {
 
@@ -235,6 +236,11 @@ public class MainActivity extends Activity {
         }
     }
 
+    public void flutter(View view) {
+        Intent in = new Intent(this, FlutterTestActivity.class);
+        startActivity(in);
+    }
+
     @RequiresApi(
             api = 21
     )
@@ -244,17 +250,16 @@ public class MainActivity extends Activity {
 
     private void initMonitor() {
         Log.i("libiao", "Build.VERSION.SDK_INT = " + Build.VERSION.SDK_INT);
-        ConnectivityManager connectivityManager = (ConnectivityManager)this.getSystemService("connectivity");
-        if (Build.VERSION.SDK_INT >= 26) {
-            connectivityManager.registerDefaultNetworkCallback(this.networkCallback);
-        } else if (Build.VERSION.SDK_INT >= 21) {
-            NetworkRequest.Builder builder = new NetworkRequest.Builder();
-            NetworkRequest request = builder.build();
-            connectivityManager.registerNetworkCallback(request, this.networkCallback);
-        } else {
-            IntentFilter intentFilter = new IntentFilter();
-            intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-        }
-
+//        ConnectivityManager connectivityManager = (ConnectivityManager)this.getSystemService("connectivity");
+//        if (Build.VERSION.SDK_INT >= 26) {
+//            connectivityManager.registerDefaultNetworkCallback(this.networkCallback);
+//        } else if (Build.VERSION.SDK_INT >= 21) {
+//            NetworkRequest.Builder builder = new NetworkRequest.Builder();
+//            NetworkRequest request = builder.build();
+//            connectivityManager.registerNetworkCallback(request, this.networkCallback);
+//        } else {
+//            IntentFilter intentFilter = new IntentFilter();
+//            intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+//        }
     }
 }

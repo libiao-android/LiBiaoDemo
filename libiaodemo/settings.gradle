@@ -12,3 +12,10 @@ include ':app', ':kotlin', ':docs',
         ':func:exoplayer',
         ':func:animation',
         ':func:androidcomponent'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  'libiaodemo_flutter_module/.android/include_flutter.groovy'
+))
+
+include ':libiaodemo_flutter_module'

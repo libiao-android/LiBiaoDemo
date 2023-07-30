@@ -50,7 +50,10 @@ import libiao.libiaodemo.android.utils.Base64Utils;
 import libiao.libiaodemo.flutter.FlutterTestActivity;
 
 
-// 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
+// for home   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
+
+// for bytedance  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
+// git remote set-url origin https://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@github.com/libiao-android/LiBiaoDemo.git
 
 public class MainActivity extends Activity {
 

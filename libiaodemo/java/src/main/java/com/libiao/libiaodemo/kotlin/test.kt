@@ -8,9 +8,12 @@ fun main() {
     val live = data as String?
     //println("live = " + live)
 
-    a?.let { a+a3.toString() }
+    //a?.let { a+a3.toString() }
 
-    println(a2?.plus(a3))
+    //println(a2?.plus(a3))
+
+    println(String.format("%.2s",34.166).toDouble())
+
 
 //    println("hello world")
 //    val items = listOf<Int>(1, 2, 3, 4, 5)
